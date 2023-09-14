@@ -60,3 +60,77 @@ select {
 }
 
 /*------CSS------*/
+body{
+  width: 100%;
+  height: 100vh;
+  background-color: #202b4e;
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ff6c50;
+}
+.h1 {
+  visibility: hidden;
+}
+.container {
+  max-width: 800px;
+  width: 100%;
+  max-height: 550px;
+  margin: 1rem auto;
+}
+.meme__slider__wrapper {
+  position: relative;
+  background-color: #535a9a;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+}
+.meme__slider__wrapper input{
+  display: none;
+}
+.meme__slider__container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.meme__slider__content {
+}
+.meme__item {
+}
+.meme__item__1 {
+}
+.meme__item__2 {
+}
+.meme__item__3 {
+}
+.meme__item__4 {
+}
+.meme__slider__container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+.meme__text {
+}
+.meme__text__1 {
+}
+.meme__text__2 {
+}
+.meme__text__3 {
+}
+.meme__text__4 {
+}
+.meme__slider__label {
+}
+.meme__label__1 {
+}
+.meme__label__2 {
+}
+.meme__label__3 {
+}
+.meme__label__4 {
+}
