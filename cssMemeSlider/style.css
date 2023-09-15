@@ -105,6 +105,7 @@ body {
   transition: transform 0.5s ease-in-out;
   display: flex;
   z-index: 1000;
+  position: relative;
 }
 
 .meme__item {
@@ -130,26 +131,33 @@ body {
 }
 
 .meme__text {
-  max-width: 70%;
-  width: 100%;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.text{
+
 }
 
 .slider__controls {
   display: flex;
   margin-left: auto;
 }
+.label{
 
-.label {
+}
+.radio {
   height: 20px;
   width: 20px;
   margin: 10px;
   cursor: pointer;
   border: 3px solid #ff6c50;
   border-radius: 50%;
+  transition: all ease 1.3s;
+}
+.radio:hover{
+  border: 3px solid #535a9a;
+  background-color: #535a9a;
 }
 
 #radio1:checked ~ .slider {
@@ -167,7 +175,6 @@ body {
 #radio4:checked ~ .slider {
   transform: translateX(-300%);
 }
-
 
 
 
