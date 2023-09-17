@@ -62,6 +62,228 @@ select {
 
 
 
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  color: #ff6c50;
+  background-color: #202b4e;
+  width: 100%;
+  height: 100vh;
+}
+
+.h1 {
+  visibility: hidden;
+}
+
+.container {
+  width: 600px;
+  height: 800px;
+  margin: 1.2rem auto;
+}
+.meme__item{
+}
+
+.meme__slider__wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #202b4e;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    'content content'
+    'text controls';
+  row-gap: 4rem;
+}
+
+.meme__slider__wrapper > input {
+  display: none;
+}
+
+.slider__wrapper__content,
+.meme__text__wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.slider__wrapper__content {
+  grid-area: content;
+}
+
+.slider__content,
+.meme__text {
+  display: flex;
+  width: calc(100% * 4);
+  height: 100%;
+  transition: transform 1s ease;
+}
+
+.slider__content .meme__item {
+  display: inline-block;
+  width: 600px;
+  object-fit: fill;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 1rem;
+}
+
+.slider__content .meme__item__1 {
+  background-image: url('assets/image/meme_1.jpg');
+}
+
+.slider__content .meme__item__2 {
+  background-image: url('assets/image/meme_2.jpg');
+}
+
+.slider__content .meme__item__3 {
+  background-image: url('assets/image/meme_3.jpg');
+}
+
+.slider__content .meme__item__4 {
+  background-image: url('assets/image/meme_4.jpg');
+}
+
+.meme__text__wrapper {
+  grid-area: text
+}
+
+.meme__text .text {
+  display: inline-block;
+  width: 600px;
+  height: 100%;
+  padding-right: 11rem;
+}
+
+.custom__control {
+  display: flex;
+}
+
+.custom__control label {
+  position: relative;
+  display: inline-block;
+  padding: 1.1rem;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.custom__control label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50%, 50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 1px solid #535a9a;
+  background-color: #202b4e;
+  transition: all 0.5s ease-out;
+}
+
+.custom__control label:hover:before {
+  border: 1px solid #535a9a;
+  background-color: #535a9a;
+}
+
+#radio1:checked ~ .slider__wrapper__content .slider__content,
+#radio1:checked ~ .meme__text__wrapper .meme__text {
+  transform: translateX(0);
+}
+
+#radio2:checked ~ .slider__wrapper__content .slider__content,
+#radio2:checked ~ .meme__text__wrapper .meme__text {
+  transform: translateX(-600px);
+}
+
+#radio3:checked ~ .slider__wrapper__content .slider__content,
+#radio3:checked ~ .meme__text__wrapper .meme__text {
+  transform: translateX(-1200px);
+}
+
+#radio4:checked ~ .slider__wrapper__content .slider__content,
+#radio4:checked ~ .meme__text__wrapper .meme__text {
+  transform: translateX(-1800px);
+}
+
+.custom__control label {
+  margin-right: 1.2rem;
+}
+
+.custom__control label:last-of-type {
+  margin-right: 0;
+}
+
+.meme__text .text {
+  text-align: center;
+  padding: 0;
+}
+
+.custom__control label::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 720px) {
+  html {
+    font-size: 8px;
+  }
+
+  .meme__slider__wrapper {
+    grid-template-rows: 3fr 40px 40px;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    grid-template-areas:
+      'content'
+      'controls'
+      'text';
+  }
+
+  .custom__control {
+    justify-content: center;
+  }
+
+  .custom__control label {
+    margin-right: 1.2rem;
+  }
+
+  .custom__control label:last-of-type {
+    margin-right: 0;
+  }
+
+  .meme__text .text {
+    text-align: center;
+    padding: 0;
+  }
+
+  .custom__control label::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 body {
   width: 100%;
   height: 100vh;
@@ -100,11 +322,10 @@ body {
   max-width: 800px;
   width: 100%;
   max-height: 500px;
- /* border: 5px solid #ff6c50;*/
   border-radius: 1rem;
   transition: transform 0.5s ease-in-out;
   display: flex;
-  z-index: 1000;
+  z-index: 10;
   position: relative;
 }
 
@@ -135,6 +356,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .text{
 
 }
@@ -153,7 +375,7 @@ body {
   cursor: pointer;
   border: 3px solid #ff6c50;
   border-radius: 50%;
-  transition: all ease 1.3s;
+  transition: all ease 0.8s;
 }
 .radio:hover{
   border: 3px solid #535a9a;
@@ -175,9 +397,6 @@ body {
 #radio4:checked ~ .slider {
   transform: translateX(-300%);
 }
-
-
-
 
 
 

@@ -7,44 +7,35 @@
         <title>Meme slider</title>
     </head>
     <body>
-        <main>
-            <h1 class="h1">CSS MEME SLIDER</h1>
-                <div class="container">
-                    <div class="meme__slider__wrapper">
-                        <input type="radio" id="radio1" checked="checked">
-                        <input type="radio" id="radio2">
-                        <input type="radio" id="radio3">
-                        <input type="radio" id="radio4">
-                        <div class="slider">
-                                <div class="meme__item meme__item__1">
-                                    <img src="assets/image/meme_1.jpg" alt="first meme">
-                                </div>
-                                <div class="meme__item meme__item__2">
-                                    <img src="assets/image/meme_2.jpg" alt="second meme">
-                                </div>
-                                <div class="meme__item meme__item__3">
-                                    <img src="assets/image/meme_3.jpg" alt="third meme">
-                                </div>
-                                <div class="meme__item meme__item__4">
-                                    <img src="assets/image/meme_4.jpg" alt="fourth meme">
-                                </div>
-                        </div>
-                    </div>
-                    <div class="text__and__controls">
-                        <div class="meme__text">
-                            <div class="text meme__text__1"><p>I lied, I'm not stress-resistant...</p></div>
-                            <div class="text meme__text__2"><p>Belarusian Kalyhanka top!</p></div>
-                            <div class="text meme__text__3"><p>That's right, I program in C++</p></div>
-                            <div class="text meme__text__4"><p>This is how my code works</p></div>
-                        </div>
-                        <div class="slider__controls">
-                           <label for="radio1" class="label"><div class="radio label__1"></div></label>
-                           <label for="radio2" class="label"><div class="radio label__2"></div></label>
-                           <label for="radio3" class="label"><div class="radio label__3"></div></label>
-                           <label for="radio4" class="label"><div class="radio label__4"></div></label>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-        </main>
-    </body>
+        <h1 class="h1">CSS MEME SLIDER</h1>
+        <div class="container">
+          <div class="meme__slider__wrapper" role="slider">
+            <input type="radio" id="radio1" checked="checked" name="slider">
+            <input type="radio" id="radio2" name="slider">
+            <input type="radio" id="radio3" name="slider">
+            <input type="radio" id="radio4" name="slider">
+            <div class="slider__wrapper__content">
+              <div class="slider__content">
+                <div class="meme__item meme__item__1"></div>
+                <div class="meme__item meme__item__2"></div>
+                <div class="meme__item meme__item__3"></div>
+                <div class="meme__item meme__item__4"></div>
+              </div>
+            </div>
+            <div class="meme__text__wrapper">
+              <div class="meme__text">
+                <p class="text meme__text__1">I lied, I'm not stress-resistant...</p>
+                <p class="text meme__text__2">Belarusian Kalyhanka top!</p>
+                <p class="text meme__text__3">That's right, I program in C++</p>
+                <p class="text meme__text__4">This is how my code works</p>
+              </div>
+            </div>
+            <div class="custom__control">
+              <label for="radio1" class="label-1"></label>
+              <label for="radio2" class="label-2"></label>
+              <label for="radio3" class="label-3"></label>
+              <label for="radio4" class="label-4"></label>
+            </div>
+          </div>
+        </div>
+      </body>
