@@ -65,7 +65,7 @@ select {
 
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.6rem;
   color: #ff6c50;
   background-color: #202b4e;
@@ -110,7 +110,6 @@ body {
   height: 100%;
   overflow: hidden;
   display: flex;
-  flex-direction: row;
 }
 
 .slider__wrapper__content {
@@ -152,26 +151,28 @@ body {
 }
 
 .meme__text__wrapper {
-  grid-area: text
+  grid-area: text;
+  transform: translateY(-10%);
 }
 
 .meme__text .text {
   display: inline-block;
-  width: 600px;
+  min-width: 600px;
   height: 100%;
   padding-right: 11rem;
 }
 
 .custom__control {
   display: flex;
+  transform: translateY(-50%);
 }
 
 .custom__control label {
   position: relative;
   display: inline-block;
-  padding: 1.1rem;
+  padding: 0.8rem;
   cursor: pointer;
-  transition: all 0.5s ease-out;
+  transition: all 0.6s ease-out;
 }
 
 .custom__control label::before {
@@ -183,14 +184,14 @@ body {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
-  border: 1px solid #535a9a;
+  border: 2px solid #ffe66c;
   background-color: #202b4e;
-  transition: all 0.5s ease-out;
+  transition: all 0.6s ease-out;
 }
 
 .custom__control label:hover:before {
-  border: 1px solid #535a9a;
-  background-color: #535a9a;
+  border: 2px solid #ffe66c;
+  background-color: #ffe66c;
 }
 
 #radio1:checked ~ .slider__wrapper__content .slider__content,
@@ -214,7 +215,7 @@ body {
 }
 
 .custom__control label {
-  margin-right: 1.2rem;
+  margin-right: 0.9rem;
 }
 
 .custom__control label:last-of-type {
@@ -222,7 +223,6 @@ body {
 }
 
 .meme__text .text {
-  text-align: center;
   padding: 0;
 }
 
@@ -232,11 +232,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 840px) {
   html {
-    font-size: 8px;
+    font-size: 10px;
   }
-
   .meme__slider__wrapper {
     grid-template-rows: 3fr 40px 40px;
     grid-template-columns: 1fr;
@@ -252,7 +251,7 @@ body {
   }
 
   .custom__control label {
-    margin-right: 1.2rem;
+    margin-right: 0.9rem;
   }
 
   .custom__control label:last-of-type {
@@ -269,6 +268,49 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+}
+
+@media screen and (max-width: 678px) {
+  .container {
+    max-width: 400px;
+    max-height: 450px;
+  }
+  .slider__content .meme__item {
+    max-width: 400px;
+    max-height: 450px;
+  }
+  .meme__text .text {
+    min-width: 400px;
+  }
+  #radio1:checked ~ .slider__wrapper__content .slider__content,
+  #radio1:checked ~ .meme__text__wrapper .meme__text {
+    transform: translateX(0);
+  }
+
+  #radio2:checked ~ .slider__wrapper__content .slider__content,
+  #radio2:checked ~ .meme__text__wrapper .meme__text {
+    transform: translateX(-400px);
+  }
+
+  #radio3:checked ~ .slider__wrapper__content .slider__content,
+  #radio3:checked ~ .meme__text__wrapper .meme__text {
+    transform: translateX(-800px);
+  }
+
+  #radio4:checked ~ .slider__wrapper__content .slider__content,
+  #radio4:checked ~ .meme__text__wrapper .meme__text {
+    transform: translateX(-1200px);
+  }
+  .custom__control {
+    display: flex;
+    transform: translateY(-0%);
+  }
+  .meme__text__wrapper {
+    grid-area: text;
+    transform: translateY(-0%);
+  }
+
 }
 
 
@@ -281,183 +323,3 @@ body {
 
 
 
-
-
-/*
-body {
-  width: 100%;
-  height: 100vh;
-  background-color: #202b4e;
-  font-size: 1.5rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #ff6c50;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  max-width: 800px;
-  width: 100%;
-  max-height: 550px;
-  margin: 1rem auto;
-}
-
-.meme__slider__wrapper {
-  position: relative;
-  background-color: #535a9a;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  border-radius: 1rem;
-}
-
-.meme__slider__wrapper > input {
-  display: none;
-}
-
-.slider {
-  max-width: 800px;
-  width: 100%;
-  max-height: 500px;
-  border-radius: 1rem;
-  transition: transform 0.5s ease-in-out;
-  display: flex;
-  z-index: 10;
-  position: relative;
-}
-
-.meme__item {
-  flex: 0 0 100%;
-}
-.meme__item img{
-  max-width: 800px;
-  width: 100%;
-  max-height: 500px;
-  height: 100%;
-  object-fit: fill;
-
-}
-
-.meme__item img {
-  max-width: 100%;
-  height: auto;
-}
-
-.text__and__controls {
-  display: flex;
-  margin-top: 30px;
-}
-
-.meme__text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.text{
-
-}
-
-.slider__controls {
-  display: flex;
-  margin-left: auto;
-}
-.label{
-
-}
-.radio {
-  height: 20px;
-  width: 20px;
-  margin: 10px;
-  cursor: pointer;
-  border: 3px solid #ff6c50;
-  border-radius: 50%;
-  transition: all ease 0.8s;
-}
-.radio:hover{
-  border: 3px solid #535a9a;
-  background-color: #535a9a;
-}
-
-#radio1:checked ~ .slider {
-  transform: translateX(0%);
-}
-
-#radio2:checked ~ .slider {
-  transform: translateX(-100%);
-}
-
-#radio3:checked ~ .slider {
-  transform: translateX(-200%);
-}
-
-#radio4:checked ~ .slider {
-  transform: translateX(-300%);
-}
-
-
-
-/*------CSS------*/
-/*
-body{
-  width: 100%;
-  height: 100vh;
-  background-color: #202b4e;
-  font-size: 1.5rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #ff6c50;
-}
-.h1 {
-  visibility: hidden;
-}
-.container {
-  max-width: 800px;
-  width: 100%;
-  max-height: 550px;
-  margin: 1rem auto;
-}
-.meme__slider__wrapper {
-  position: relative;
-  background-color: #535a9a;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  border-radius: 1rem;
-}
-.meme__slider__wrapper > input{
-  display: none;
-}
-.slider{
-  max-width: 800px;
-  width: 100%;
-  max-height: 500px;
-  overflow: hidden;
-  border: 5px solid #ff6c50;
-  border-radius: 1rem;
-}
-.text__and__controls{
-  display: flex;
-  margin-top: 30px;
-}
-.meme__text{
-  max-width: 70%;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-}
-.slider__controls{
-  display: flex;
-  margin-left: auto;
-}
-.label{
-  height: 20px;
-  width: 20px;
-  margin: 10px;
-  cursor: pointer;
-  border: 3px solid #ff6c50;
-  border-radius: 50%;
-}
