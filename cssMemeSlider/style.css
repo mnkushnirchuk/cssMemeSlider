@@ -232,7 +232,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 678px) {
   html {
     font-size: 10px;
   }
@@ -268,10 +268,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-}
-
-@media screen and (max-width: 678px) {
   .container {
     max-width: 400px;
     max-height: 450px;
@@ -310,8 +306,8 @@ body {
     grid-area: text;
     transform: translateY(-0%);
   }
-
 }
+
 
 
 
